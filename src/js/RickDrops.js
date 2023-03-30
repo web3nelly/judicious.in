@@ -21,7 +21,7 @@ export default class RickDrops {
     this.maxAnimationDuration = 13;
   }
 
-  generate() {
+  rain() {
     this.rainContainer.innerHTML = ""; // Clear old drops
 
     for (let i = 0; i < this.numRickDrops; i++) {

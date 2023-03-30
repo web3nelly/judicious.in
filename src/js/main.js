@@ -18,7 +18,7 @@ const handleInteraction = () => {
 
   animateHead(myHead, interactions);
   rickDrops.interactions = interactions;
-  rickDrops.generate();
+  rickDrops.rain();
 };
 
 document.addEventListener("keyup", handleInteraction);
@@ -27,4 +27,4 @@ document.addEventListener("mousewheel", handleInteraction);
 
 setBackgroundColor();
 setHeadSize(myHead);
-rickDrops.generate();
+rickDrops.rain();

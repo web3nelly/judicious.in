@@ -29,7 +29,6 @@ export default class NoBody {
   }
 
   animate(interactions, maxInteractions) {
-    console.log("animate", interactions, !this.myHead);
     if (!this.myHead) return;
 
     this.myHead.style.animationDuration = "1.33s";
@@ -43,7 +42,6 @@ export default class NoBody {
         interactions,
         maxInteractions
       )}s`;
-      console.log(this.calAnimationDuration(interactions, maxInteractions));
       this.myHead.rotate;
     }, 1111); // Remove the class after the animation duration (1s)
   }

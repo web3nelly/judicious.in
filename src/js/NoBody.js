@@ -4,6 +4,7 @@ export default class NoBody {
   maxSpinDuration = 5.5; // maximum animation duration
 
   createMyHead(parent = document.body, headSize = "33%") {
+    parent.innerHTML = "";
     if (0 === headSize) return;
     this.myHead = document.createElement("img");
     this.myHead.src = "./src/img/nobody.gif";

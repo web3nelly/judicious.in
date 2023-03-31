@@ -8,9 +8,10 @@ export default class RickDrops {
       "rick-sanchez-twerk-sq-121.gif",
     ];
     this.rickRekts = [
-      "rick-sanchez-rekt-sq.gif",
-      "rick-sanchez-rekt-sq-x2.gif",
-      "rick-sanchez-rekt-sq-x5.gif",
+      "rick-sanchez-rekt-sq-88.gif",
+      "rick-sanchez-rekt-sq-111.gif",
+      "rick-sanchez-rekt-sq-233.gif",
+      "rick-sanchez-rekt-sq-377.gif",
     ];
     this.rickSrc = "../src/img/rick-twerks/";
     this.maxWidth = 123;
@@ -21,7 +22,7 @@ export default class RickDrops {
     this.numRickDrops = numRick;
     this.interactions = interactions;
     this.minAnimationDuration = 5;
-    this.maxAnimationDuration = 21;
+    this.maxAnimationDuration = 13;
   }
 
   rain() {
@@ -39,7 +40,7 @@ export default class RickDrops {
     rickDrop.classList.add("rickDrop");
     rickDrop.style.left = `${Math.random() * 100}%`;
     rickDrop.style.top = `${
-      Math.random() * (-this.maxWidth * 1.21) - this.maxWidth * 0.89
+      Math.random() * (-this.maxWidth * 2) - this.maxWidth
     }px`;
     rickDrop.style.width = size;
     rickDrop.style.height = size;

@@ -1,4 +1,10 @@
-import { getBGColor, getHeadSize, getNumRicks } from "./queryParams.js";
+import {
+  getBGColor,
+  getHeadSize,
+  getNumRicks,
+  getMaxRickW,
+  getMinRickW,
+} from "./queryParams.js";
 import NoBody from "./NoBody.js";
 import RickDrops from "./RickDrops.js";
 
@@ -24,6 +30,9 @@ const handleInteraction = () => {
 
 noBody.setBGColor(getBGColor());
 noBody.createMyHead(zoomContainer, getHeadSize());
+
+rickDrops.maxWidth = getMaxRickW() ?? rickDrops.maxWidth;
+rickDrops.minWidth = getMinRickW() ?? rickDrops.minWidth;
 rickDrops.rain();
 
 document.addEventListener("keyup", handleInteraction);

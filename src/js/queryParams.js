@@ -13,15 +13,27 @@ function getBGColor() {
 }
 
 function getHeadSize() {
-  if (undefined == urlParams().get("bgColor")) {
+  if (undefined == urlParams().get("headSize")) {
     return;
   } else return parseInt(urlParams().get("headSize"));
 }
 
 function getNumRicks() {
-  if (undefined == urlParams().get("bgColor")) {
+  if (undefined == urlParams().get("numRickDrops")) {
     return;
   } else return parseInt(urlParams().get("numRickDrops"));
 }
 
-export { getBGColor, getHeadSize, getNumRicks };
+function getMaxRickW() {
+  if (undefined == urlParams().get("maxRickW")) {
+    return;
+  } else return parseInt(urlParams().get("maxRickW"));
+}
+
+function getMinRickW() {
+  if (undefined == urlParams().get("minRickW")) {
+    return;
+  } else return parseInt(urlParams().get("minRickW"));
+}
+
+export { getBGColor, getHeadSize, getNumRicks, getMaxRickW, getMinRickW };

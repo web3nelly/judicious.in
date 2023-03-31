@@ -13,13 +13,15 @@ export default class RickDrops {
       "rick-sanchez-rekt-sq-x5.gif",
     ];
     this.rickSrc = "../src/img/rick-twerks/";
+    this.maxWidth = 123;
+    this.minWidth = 9;
     this.rickMixedTwerks = [];
     this.rickMixedRekt = [];
     this.rainContainer = rainContainer;
     this.numRickDrops = numRick;
     this.interactions = interactions;
     this.minAnimationDuration = 5;
-    this.maxAnimationDuration = 13;
+    this.maxAnimationDuration = 21;
   }
 
   rain() {
@@ -31,12 +33,12 @@ export default class RickDrops {
   }
 
   creatRickDrop() {
-    const size = `${Math.random() * 111 + 11}px`;
+    const size = `${Math.random() * this.maxWidth + this.minWidth}px`;
     const rickDrop = document.createElement("div");
 
     rickDrop.classList.add("rickDrop");
     rickDrop.style.left = `${Math.random() * 100}%`;
-    rickDrop.style.top = `${Math.random() * -144 - 55}px`;
+    rickDrop.style.top = `${Math.random() * -155 - 55}px`;
     rickDrop.style.width = size;
     rickDrop.style.height = size;
     rickDrop.style.backgroundSize = "cover";

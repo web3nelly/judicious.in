@@ -1,3 +1,6 @@
+// This is nolonger in use on this website.
+// Moved to NoBody
+
 const minSpinDuration = 0.33; // minimum animation duration
 const maxSpinDuration = 5; // maximum animation duration
 

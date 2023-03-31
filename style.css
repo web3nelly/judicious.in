@@ -18,8 +18,6 @@ body {
 
 .rickDrop {
   position: absolute;
-  width: 111px;
-  height: 111px;
   background-repeat: no-repeat;
   animation: drop 3s linear;
   animation-iteration-count: infinite;
@@ -46,7 +44,10 @@ body {
 }
 
 .zoom-container {
-  animation: zoom-in-once 3.33s ease-out forwards;
+  position: relative;
+  width: 100%;
+  height: auto;
+  animation: zoom-in-once 4.44s ease-out forwards;
 }
 
 @keyframes zoom-in-once {
@@ -59,13 +60,6 @@ body {
 }
 
 .rotate-image {
-  cursor: wait;
-  display: block;
-  position: sticky;
-  width: 33.3%;
-  max-width: 777px;
-  height: auto;
-  margin: auto;
   animation: rotate 5.5s linear infinite;
 }
 

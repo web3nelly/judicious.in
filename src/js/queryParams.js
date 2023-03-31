@@ -1,35 +1,21 @@
 const urlParams = () => {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  return urlParams;
+  return new URLSearchParams(window.location.search);
 };
 
-function setBackgroundColor() {
-  const bgColor = urlParams().get("bgColor");
+const sanitizeString = (str) => {
+  return str.replace(/[^a-z0-9#]/gi, "");
+};
 
-  if (bgColor) {
-    document.body.style.backgroundColor = bgColor;
-    // console.log(document.body.style.backgroundColor);
-  }
+function getBGColor() {
+  return sanitizeString(urlParams().get("bgColor"));
 }
 
-function setHeadSize(img) {
-  const headSize = parseInt(urlParams().get("headSize"));
-
-  if (headSize > 10 && 1111 > headSize) {
-    img.style.width = headSize + "px";
-    // console.log(img.style.width);
-  }
+function getHeadSize() {
+  return parseInt(urlParams().get("headSize"));
 }
 
-function getNumRicks(rickDrops) {
-  const numRickDrops = parseInt(urlParams().get("numRickDrops"));
-
-  if (numRickDrops != isNaN && 1111 > numRickDrops) {
-    return numRickDrops;
-  }
-
-  return null;
+function getNumRicks() {
+  return parseInt(urlParams().get("numRickDrops"));
 }
 
-export { setBackgroundColor, setHeadSize, getNumRicks };
+export { getBGColor, getHeadSize, getNumRicks };

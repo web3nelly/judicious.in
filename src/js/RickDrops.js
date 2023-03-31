@@ -13,7 +13,8 @@ export default class RickDrops {
       "rick-sanchez-rekt-sq-x5.gif",
     ];
     this.rickSrc = "../src/img/rick-twerks/";
-    this.rickMixed = [];
+    this.rickMixedTwerks = [];
+    this.rickMixedRekt = [];
     this.rainContainer = rainContainer;
     this.numRickDrops = numRick;
     this.interactions = interactions;
@@ -25,11 +26,11 @@ export default class RickDrops {
     this.rainContainer.innerHTML = ""; // Clear old drops
 
     for (let i = 0; i < this.numRickDrops; i++) {
-      this.rainContainer.appendChild(this.creatDrop());
+      this.rainContainer.appendChild(this.creatRickDrop());
     }
   }
 
-  creatDrop() {
+  creatRickDrop() {
     const size = `${Math.random() * 111 + 11}px`;
     const rickDrop = document.createElement("div");
 
@@ -39,56 +40,72 @@ export default class RickDrops {
     rickDrop.style.width = size;
     rickDrop.style.height = size;
     rickDrop.style.backgroundSize = "cover";
-    rickDrop.style.backgroundImage = this.getDropBG();
+    rickDrop.style.backgroundImage = this.getRickBG();
 
-    if (this.interactions > 12) this.rotate(rickDrop);
+    this.rotate(rickDrop);
 
-    return this.animateDrop(rickDrop);
+    return this.animate(rickDrop);
   }
 
-  getDropBG() {
-    if (this.interactions > 2 && this.interactions <= 8) {
-      return this.randomRickMixed();
-    }
-    if (this.interactions > 8) {
-      return this.randomRickRekt();
-    }
+  getRickBG() {
+    if (this.interactions > 2 && this.interactions <= 5)
+      return this.randomRickMixedTwerk();
+
+    if (this.interactions > 5 && this.interactions <= 8)
+      return this.randomRickMixedRekt();
+
+    if (this.interactions > 8) return this.randomRickRekt();
 
     return this.randomRickTwerk();
   }
 
   randomRickTwerk() {
-    return `url("${this.rickSrc + this.getRandomRick(this.rickTwerks)}")`;
+    return this.urlWrap(this.getRandom(this.rickTwerks));
   }
-
   randomRickRekt() {
-    return `url("${this.rickSrc + this.getRandomRick(this.rickRekts)}")`;
+    return this.urlWrap(this.getRandom(this.rickRekts));
+  }
+  randomRickMixedTwerk() {
+    this.createRickMixedTwerks();
+    return this.urlWrap(this.getRandom(this.rickMixedTwerks));
+  }
+  randomRickMixedRekt() {
+    this.createRickMixedRekt();
+    return this.urlWrap(this.getRandom(this.rickMixedRekt));
   }
 
-  randomRickMixed() {
-    this.createRandomRickMixed();
-    return `url("${this.rickSrc + this.getRandomRick(this.rickMixed)}")`;
+  createRickMixedTwerks() {
+    this.rickMixedTwerks = [
+      ...this.rickTwerks,
+      ...this.rickRekts,
+      ...this.rickTwerks,
+    ];
   }
 
-  createRandomRickMixed() {
-    this.rickMixed = [...this.rickTwerks, ...this.rickRekts];
+  createRickMixedRekt() {
+    this.rickMixedRekt = [
+      ...this.rickRekts,
+      ...this.rickTwerks,
+      ...this.rickRekts,
+    ];
   }
 
-  getRandomRick(arr) {
+  getRandom(arr) {
     const randomIndex = Math.floor(Math.random() * arr.length);
     return arr[randomIndex];
   }
 
-  rotate(rickDrop) {
-    if (this.interactions > 12 && this.interactions <= 20)
-      rickDrop.style.rotate = `${this.interactions / 2}deg`;
-
-    if (this.interactions > 20) {
-      rickDrop.style.rotate = `${-this.interactions / 3}deg`;
-    }
+  urlWrap(rick) {
+    return `url("${this.rickSrc + rick}")`;
   }
 
-  animateDrop(rickDrop) {
+  rotate(rickDrop) {
+    if (this.interactions <= 20) {
+      rickDrop.style.rotate = `${this.interactions / 2}deg`;
+    } else rickDrop.style.rotate = `${-this.interactions / 2.34}deg`;
+  }
+
+  animate(rickDrop) {
     const animationDuration =
       Math.random() * (this.maxAnimationDuration - this.minAnimationDuration) +
       this.minAnimationDuration;

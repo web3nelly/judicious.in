@@ -5,6 +5,7 @@ Inside: [judicious.in](https://judicious.in/)
 ![Nobody here](https://judicious.in/src/img/nobody.gif)
 
 ## Query Params
+
 - `bgColor`: sets the page background color
 - `headSize`: change the size of the head (11 - 1110)px
 - `numRickDrops`: number of Rickdrops you want (max 1110 - more than enough...)

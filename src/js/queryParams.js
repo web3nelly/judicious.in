@@ -7,15 +7,21 @@ const sanitizeString = (str) => {
 };
 
 function getBGColor() {
-  return sanitizeString(urlParams().get("bgColor"));
+  if (undefined == urlParams().get("bgColor")) {
+    return;
+  } else return sanitizeString(urlParams().get("bgColor"));
 }
 
 function getHeadSize() {
-  return parseInt(urlParams().get("headSize"));
+  if (undefined == urlParams().get("bgColor")) {
+    return;
+  } else return parseInt(urlParams().get("headSize"));
 }
 
 function getNumRicks() {
-  return parseInt(urlParams().get("numRickDrops"));
+  if (undefined == urlParams().get("bgColor")) {
+    return;
+  } else return parseInt(urlParams().get("numRickDrops"));
 }
 
 export { getBGColor, getHeadSize, getNumRicks };

@@ -38,7 +38,9 @@ export default class RickDrops {
 
     rickDrop.classList.add("rickDrop");
     rickDrop.style.left = `${Math.random() * 100}%`;
-    rickDrop.style.top = `${Math.random() * -155 - 55}px`;
+    rickDrop.style.top = `${
+      Math.random() * (-this.maxWidth * 1.21) - this.maxWidth * 0.89
+    }px`;
     rickDrop.style.width = size;
     rickDrop.style.height = size;
     rickDrop.style.backgroundSize = "cover";

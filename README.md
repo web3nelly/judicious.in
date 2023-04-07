@@ -2,7 +2,7 @@
 
 Inside: [judicious.in](https://judicious.in/)
 
-![Nobody here](https://judicious.in/src/img/nobody.gif)
+![Nobody (We) here](https://judicious.in/src/img/we/nobody-pink.gif)
 
 ## Query Params
 
@@ -12,7 +12,7 @@ Inside: [judicious.in](https://judicious.in/)
 - `getMaxRickW`: Max width of RickDrop
 - `getMinRickW`: Min width of RickDrop
 
-[Example with _?bgColor=pink&headSize=333&numRickDrops=333_](https://judicious.in/?bgColor=pink&headSize=333&numRickDrops=333)
+[Example with _?bgColor=purple&headSize=333&numRickDrops=333_](https://judicious.in/?bgColor=purple&headSize=333&numRickDrops=333)
 
 ## More to come!!!
 

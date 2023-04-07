@@ -7,7 +7,7 @@ export default class NoBody {
     parent.innerHTML = "";
     if (0 === headSize) return;
     this.myHead = document.createElement("img");
-    this.myHead.src = "./src/img/nobody.gif";
+    this.myHead.src = "./src/img/we/nobody-pink.gif";
     this.myHead.style.cursor = "wait";
     this.myHead.style.display = "block";
     this.myHead.style.position = "sticky";
